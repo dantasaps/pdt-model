@@ -21,7 +21,7 @@ void ModeloPLI::contar(int n){
 
 void ModeloPLI::resolver(int init){
 	// Facilitando o acesso aos limites
-	int S = dados.S;
+	int S = 1;
 	int D = 1;
 	int E = S * D;
 	int M = dados.M;
