@@ -202,9 +202,9 @@ void ModeloPLI::resolver(int init){
 		}
 
 		// salvando a saida
-		ofstream solution_file;
- 		solution_file.open(dados.path, 'w');
- 		if(solution_file.is_open()){
+		// ofstream solution_file;
+ 	// 	solution_file.open(dados.path, 'w');
+ 		// if(solution_file.is_open()){
 
 			for (int m = 0; m < M; m++){
 				for (int s = 0; s < S; s++){
@@ -212,16 +212,16 @@ void ModeloPLI::resolver(int init){
 						for (int t = 0; t < dados.Td(d); t++){
 							for (int f = 0; f < dados.Ft(d,t); f++){
 								int aux = cplex.getValue(x[m][s][d][t][f]);
-								solution_file << aux << " ";
+								cout << aux << " ";
 							}
 						}
 					}
 				}
-				solution_file << endl; 
+				cout << endl; 
 			}
-			solution_file.close();
-			cout << "\n Salvou em sol/" << dados.path << endl;
- 		}
+			// solution_file.close();
+			// cout << "\n Salvou em sol/" << dados.path << endl;
+ 		// }
 
 
 		env.out() << "Solution status = " << cplex.getStatus() << endl;
